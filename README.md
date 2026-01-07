@@ -1,170 +1,150 @@
 <div align="center">
+  <br />
+  <br />
+  
+  # <code>TINYSHOW_ALPHA</code>
+  
+  **MINIMAL PORTFOLIO PLATFORM / JSON-DRIVEN**
+  
+  <br />
 
-<h1>
-    <em>Tiny Show</em> 📋
-</h1>
-<p>
-    Una elegante plataforma para mostrar tus proyectos, creada con Astro y React.
-    <br>
-    Simplemente actualiza el archivo <code>projects.json</code> para gestionar tu portafolio.
-</p>
+  <img src="https://img.shields.io/badge/ASTRO-FF5D01?style=for-the-badge&logo=astro&logoColor=white" alt="Astro" />
+  <img src="https://img.shields.io/badge/REACT-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/TYPESCRIPT-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
 
-<strong><a href="https://tiny-showcase.vercel.app/" target="_blank">🔗 DEMO EN VIVO</a></strong>
 
+  <br />
+  <br />
 </div>
 
-<div align="center">
-    <a href="#-características">
-        Características
-    </a>
-    <span>&nbsp;✦&nbsp;</span>
-    <a href="#-empezar">
-        Empezar
-    </a>
-    <span>&nbsp;✦&nbsp;</span>
-    <a href="#-stack-tecnológico">
-        Stack
-    </a>
-    <span>&nbsp;✦&nbsp;</span>
-    <a href="#-comandos">
-        Comandos
-    </a>
-    <span>&nbsp;✦&nbsp;</span>
-    <a href="#-personalización">
-        Personalización
-    </a>
-    <span>&nbsp;✦&nbsp;</span>
-    <a href="#-despliegue">
-        Despliegue
-    </a>
-</div>
+---
 
-<p></p>
+### 00. PREVIEW
 
-<div align="center">
+![Portfolio Preview](portada.webp)
 
-[![Built with Astro](https://astro.badg.es/v2/built-with-astro/tiny.svg)](https://astro.build)
+> **ABSTRACT:** Sistema de portafolio minimalista impulsado por un solo archivo JSON. Arquitectura estática con Astro + React para mostrar proyectos sin base de datos ni backend. Actualización mediante edición directa de `projects.json`.
+>
+> <br />
+>
+> **DEMO LIVE:** [tinyshow-alpha.vercel.app](https://tinyshow-alpha.vercel.app/)
 
-<img src="portada.webp" alt="Captura de pantalla de Tiny Show" style="border-radius: 8px; max-width: 800px; width: 100%;">
+---
 
-</div>
+### 01. ARCHITECTURE & DECISIONS
 
-## ✨ Características
+| COMPONENT | TECH | NOTE |
+| :--- | :--- | :--- |
+| **Core** | `Astro` | Static site generation, zero JS by default. |
+| **UI** | `React (TSX)` | Island architecture for interactive components. |
+| **Components** | `Shadcn/ui` | Radix UI primitives with Tailwind. |
+| **Styles** | `Tailwind CSS` | Utility-first styling approach. |
+| **Type Safety** | `TypeScript` | Strict mode enabled. |
+| **Data Source** | `projects.json` | Single source of truth for portfolio content. |
 
-- **Fácil de mantener** - Actualiza solo el archivo `projects.json` para añadir o modificar proyectos
-- **Rendimiento optimizado** - Construido con Astro para una carga rápida y una experiencia fluida
-- **Componentes reutilizables** - Creado con React y Shadcn para una UI moderna y responsive
-- **Personalizable** - Fácilmente adaptable a tus necesidades y estilo personal
-- **SEO amigable** - Estructura optimizada para buscadores
-- **Despliegue sencillo** - Compatible con plataformas como Vercel, Netlify o GitHub Pages
+<br>
 
-## 🚀 Stack Tecnológico
+### 02. INSTALLATION
 
-- [**Astro**](https://astro.build/) - El framework web de la nueva época, optimizado para sitios con contenido
-- [**React**](https://es.react.dev/) - Biblioteca de JavaScript para construir interfaces de usuario
-- [**Shadcn**](https://ui.shadcn.com/) - Librería de componentes reutilizables y accesibles
-- [**TypeScript**](https://www.typescriptlang.org/) - JavaScript con sintaxis de tipado estático
-- [**Tailwind CSS**](https://tailwindcss.com/) - Framework CSS para diseño rápido y responsivo
 
-## 🏁 Empezar
 
-### 1. Usa este [repositorio](https://github.com/samuhlo/tiny-showcase) como _template_
-
-- Se recomienda [pnpm](https://pnpm.io/installation) como gestor de dependencias:
+*Run local environment:*
 
 ```bash
-# Activa pnpm en MacOS, WSL & Linux:
-corepack enable
-corepack prepare pnpm@latest --activate
+# 1. Clone or use template
+git clone https://github.com/samuhlo/tinyshow-alpha.git
+# OR
+pnpm create astro@latest -- --template samuhlo/tinyshow-alpha
 
-# Inicializa el proyecto
-pnpm create astro@latest -- --template samU13/tiny-Show
-```
-
-### 2. Instala las dependencias
-
-```bash
-# Navega al directorio del proyecto
-cd tiny-Show
-
-# Instala las dependencias
+# 2. Navigate & install dependencies (pnpm enforced)
+cd tinyshow-alpha
 pnpm install
+
+# 3. Ignite dev server
+pnpm dev
 ```
 
-### 3. Añade tu contenido:
+*Access at [http://localhost:4321](http://localhost:4321)*
 
-Edita el archivo `projects.json` para crear la lista de proyectos personalizada:
+---
+
+### 03. USAGE & CONFIGURATION
+
+#### A. PROJECTS DATA STRUCTURE
+
+
+
+Edit `projects.json` to manage portfolio content:
 
 ```json
 [
   {
-    "title": "Mi Proyecto",
-    "description": "Descripción de mi proyecto",
-    "languages": ["javascript", "css", "html"],
-    "image": "/ruta/a/imagen.webp",
-    "url": "https://miproyecto.com",
-    "github": "https://github.com/usuario/proyecto"
+    "title": "Project Name",
+    "description": "Technical description of what it does",
+    "languages": ["typescript", "css", "html"],
+    "image": "/project_images/screenshot.webp",
+    "url": "https://project-demo.com",
+    "github": "https://github.com/user/repo"
   }
 ]
 ```
 
-### 4. Lanza el servidor de desarrollo:
+**SCHEMA:**
+- `title`: Project display name
+- `description`: Brief technical summary
+- `languages`: Array of tech tags (affects badge colors)
+- `image`: Path to preview image (recommended: 1200×600px)
+- `url`: Live demo URL (optional)
+- `github`: Repository URL (optional)
 
-```bash
-pnpm dev
-```
+<br>
 
-Abre [**http://localhost:4321**](http://localhost:4321/) en tu navegador para ver el resultado.
+#### B. LANGUAGE COLOR CUSTOMIZATION
 
-## 💻 Comandos
-
-| Comando        | Acción                                                                       |
-| :------------- | :--------------------------------------------------------------------------- |
-| `pnpm dev`     | Lanza un servidor de desarrollo local en `localhost:4321`.                   |
-| `pnpm build`   | Comprueba posibles errores y hace un empaquetado de producción en `./dist/`. |
-| `pnpm preview` | Vista previa local del build de producción en `localhost:4321`.              |
-
-## 🎨 Personalización
-
-### Colores de lenguajes
-
-Edita la constante `languageColors` en `src/components/ProjectCard.astro` para cambiar los colores asociados a cada lenguaje de programación:
+Modify badge colors in component logic:
 
 ```typescript
+// Example: src/components/ui/badge.tsx or similar
 const languageColors = {
-  javascript: "#f1e05a",
   typescript: "#3178c6",
-  // Añade más lenguajes según necesites
-};
+  javascript: "#f1e05a",
+  python: "#3572A5",
+  // Add more as needed
+}
 ```
 
-### Estilo y temas
+---
 
-Modifica los archivos en `src/styles/` para personalizar la apariencia general del sitio.
+### 04. COMMANDS
 
-## 🚢 Despliegue
 
-### Vercel
 
-La forma más sencilla de desplegar tu Tiny Show es usando [Vercel](https://vercel.com):
+| COMMAND | ACTION |
+| :--- | :--- |
+| `pnpm dev` | Start dev server at `localhost:4321` |
+| `pnpm build` | Generate static build in `./dist/` |
+| `pnpm preview` | Preview production build locally |
 
-1. Sube tu proyecto a GitHub, GitLab o Bitbucket
-2. Importa el repositorio en Vercel
-3. Vercel detectará automáticamente que es un proyecto Astro
-4. ¡Listo! Tu sitio estará disponible en una URL de Vercel
+<br>
 
-### Otros servicios
+### 05. DEPLOYMENT
 
-También puedes desplegar en otras plataformas como Netlify, GitHub Pages o cualquier hosting que soporte sitios estáticos.
+**Vercel (Recommended):**
+1. Push repo to GitHub/GitLab
+2. Import project in Vercel dashboard
+3. Auto-detected as Astro project
+4. Deploy
 
-## 📝 Licencia
-
-Este proyecto está bajo la Licencia MIT - consulta el archivo LICENSE para más detalles.
+**Alternative platforms:** Netlify, Cloudflare Pages, GitHub Pages (any static host).
 
 ---
 
 <div align="center">
-    Creado con ❤️ por <a href="https://github.com/samuhlo">Samu Lo</a>
-    <br>
-   
+
+
+<code>DESIGNED & CODED BY @samuhlo</code>
+
+
+<small>Lugo, Galicia</small>
+
 </div>
