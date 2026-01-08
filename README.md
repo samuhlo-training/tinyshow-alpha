@@ -31,7 +31,7 @@
 
 ---
 
-### 01. ARCHITECTURE & DECISIONS
+### 01 __ ARCHITECTURE & DECISIONS
 
 | COMPONENT | TECH | NOTE |
 | :--- | :--- | :--- |
@@ -44,7 +44,7 @@
 
 <br>
 
-### 02. INSTALLATION
+### 02 __ INSTALLATION
 
 
 
@@ -68,7 +68,7 @@ pnpm dev
 
 ---
 
-### 03. USAGE & CONFIGURATION
+### 03 __ USAGE & CONFIGURATION
 
 #### A. PROJECTS DATA STRUCTURE
 
@@ -115,7 +115,7 @@ const languageColors = {
 
 ---
 
-### 04. COMMANDS
+### 04 __ COMMANDS
 
 
 
@@ -142,7 +142,7 @@ const languageColors = {
 <div align="center">
 
 
-<code>DESIGNED & CODED BY @samuhlo</code>
+<code>DESIGNED & CODED BY <a href='https://github.com/samuhlo'>samuhlo</a></code>
 
 
 <small>Lugo, Galicia</small>
